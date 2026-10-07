@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mains & Essay Center — question bank, ethics case generator, essay practice, brainstorming and evaluation.">
+<title>Mains / Essay Center — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mains.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to Mains Center</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="mains.html" aria-current="page">Mains</a><a href="answer-writing.html">Answer Writing</a><a href="current-affairs.html">CA Hub</a><a href="revision.html">Revision</a></nav>
+  <div class="top-actions"><span class="honest-chip">local demo model</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Mains / Essay Center</h1>
+  <p class="muted" style="margin-bottom:20px">Marks are made here. Question bank, case studies, essay machinery — all wired to the writing workspace.</p>
+
+  <!-- ANSWER WRITING BANK #96 #213 -->
+  <section class="card" aria-labelledby="qs-h">
+    <h2 id="qs-h">Mains Answer Writing — Question Bank <span class="fid">#96</span> <span class="fid">#213</span></h2>
+    <div class="row" style="margin-bottom:6px">
+      <label class="sr-only" for="paper-filter">Filter by paper</label>
+      <select id="paper-filter"><option value="">All papers</option><option>GS-1</option><option>GS-2</option><option>GS-3</option><option>GS-4</option><option>Essay</option></select>
+      <span class="muted small" id="qs-count" role="status"></span>
+    </div>
+    <div id="qs-list" class="qs-list" aria-live="polite"></div>
+  </section>
+
+  <div class="mn-grid">
+    <!-- ETHICS CASES #106 -->
+    <section class="card" aria-labelledby="cs-h"><h2 id="cs-h">Ethics Case Study Generator <span class="fid">#106</span></h2>
+      <div class="row"><label class="sr-only" for="cs-theme">Case theme</label>
+        <select id="cs-theme"><option>Conflict of interest</option><option>Corruption vs career</option><option>Disaster &amp; triage ethics</option><option>Technology &amp; privacy</option></select>
+        <button class="btn btn-primary btn-sm" id="cs-gen" type="button">Generate case</button></div>
+      <div id="cs-out" aria-live="polite"><div class="empty">Pick a theme — the AI drafts a GS-4 case study with stakeholders and sub-questions.</div></div>
+    </section>
+
+    <!-- ESSAY PRACTICE #107 -->
+    <section class="card" aria-labelledby="ep-h"><h2 id="ep-h">Essay Practice <span class="fid">#107</span></h2>
+      <div id="ep-out" class="essay-list"></div>
+    </section>
+
+    <!-- BRAINSTORM #108 -->
+    <section class="card" aria-labelledby="bs-h"><h2 id="bs-h">Essay Brainstorming <span class="fid">#108</span></h2>
+      <div class="row"><input type="text" id="bs-topic" placeholder="Enter essay topic… e.g. Cooperative federalism" aria-label="Essay topic for brainstorming">
+        <button class="btn btn-dark btn-sm" id="bs-gen" type="button">Brainstorm</button></div>
+      <p class="field-err" id="bs-err" hidden></p>
+      <div id="bs-out" aria-live="polite"><div class="empty">The AI opens the topic across dimensions — stakeholders, arguments, quotes, anecdotes.</div></div>
+    </section>
+
+    <!-- EVALUATION #109 -->
+    <section class="card wide" aria-labelledby="ev-h"><h2 id="ev-h">Essay Evaluation <span class="fid">#109</span></h2>
+      <label class="muted small" for="ev-text">Paste your essay draft (honest heuristic evaluator — structure, flow, length, balance):</label>
+      <textarea id="ev-text" rows="6" placeholder="Paste 200–1200 words…"></textarea>
+      <p class="field-err" id="ev-err" hidden></p>
+      <button class="btn btn-primary" id="ev-btn" type="button">Evaluate essay</button>
+      <div id="ev-out" aria-live="polite"></div>
+    </section>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="answer-writing.html">Answer Writing Workspace</a><a href="community.html">Community</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Mains Center demo — evaluators are honest local heuristics.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="mains.js"></script>
+</body>
+</html>

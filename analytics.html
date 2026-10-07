@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Performance Analytics — readiness, subjects, memory, mocks and productivity trends.">
+<title>Analytics — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="analytics.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to analytics</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="mock-tests.html">Tests</a><a href="analytics.html" aria-current="page">Analytics</a><a href="preparation-twin.html">Twin</a><a href="mistake-notebook.html">Mistakes</a></nav>
+  <div class="top-actions"><span class="honest-chip">demo data</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Performance Analytics</h1>
+  <p class="muted" style="margin-bottom:20px">Nineteen measurement systems, one honest picture. <span class="honest-chip">local demo model</span></p>
+
+  <!-- SCORE ROW -->
+  <section class="grid3" aria-label="Core scores">
+    <article class="card"><h2>Preparation Score <span class="fid">#49</span></h2><p class="big" id="a-prep">—</p>
+      <div class="meter-row"><span>Consistency</span><span class="meter"><span id="b-cons" style="width:0%"></span></span></div>
+      <div class="meter-row"><span>Coverage</span><span class="meter"><span id="b-cov" style="width:0%"></span></span></div>
+      <div class="meter-row"><span>Output</span><span class="meter"><span id="b-out" style="width:0%"></span></span></div></article>
+    <article class="card"><h2>Overall Readiness <span class="fid">#58</span></h2>
+      <div class="donut" id="a-ready-d" role="img" aria-label="Readiness"><div><strong id="a-ready">—</strong><small>%</small></div></div>
+      <p class="muted small">Weighted: tests 40% · revision 25% · coverage 20% · consistency 15%.</p></article>
+    <article class="card"><h2>Confidence Tracker <span class="fid">#61</span></h2>
+      <input type="range" id="a-conf" min="1" max="10" value="6" aria-label="Confidence level">
+      <p class="conf-out" id="a-conf-out" aria-live="polite"></p>
+      <p class="muted small">Calibration gap vs accuracy is reported in the AI Test Analysis.</p></article>
+  </section>
+
+  <div class="grid2">
+    <!-- SUBJECTS #50 + ACCURACY #52 + TIME #53 -->
+    <section class="card" aria-labelledby="sp-h"><h2 id="sp-h">Subject Performance <span class="fid">#50</span> · Accuracy <span class="fid">#52</span> · Time <span class="fid">#53</span></h2>
+      <table class="tbl"><thead><tr><th>Subject</th><th>Accuracy</th><th>Avg time/Q</th><th>Trend</th></tr></thead><tbody id="sub-tbl"></tbody></table></section>
+    <!-- TOPICS #51 + WEAK #54 + STRONG #55 -->
+    <section class="card" aria-labelledby="tp-h"><h2 id="tp-h">Topic Performance <span class="fid">#51</span></h2>
+      <div id="topic-list"></div>
+      <div class="ws-grid"><div><h3 class="mini-h">Weakest <span class="fid">#54</span></h3><ul id="weak-ul"></ul></div>
+      <div><h3 class="mini-h">Strongest <span class="fid">#55</span></h3><ul id="strong-ul"></ul></div></div></section>
+    <!-- MOCKS #57 + TRENDS #192 -->
+    <section class="card" aria-labelledby="mt-h"><h2 id="mt-h">Mock-Test Analytics <span class="fid">#57</span> · Trends <span class="fid">#192</span></h2>
+      <svg id="trend-svg" viewBox="0 0 320 120" role="img" aria-label="Score trend, last six tests"></svg>
+      <div id="trend-legend" class="muted small"></div></section>
+    <!-- HEATMAP #59 + MEMORY #60 -->
+    <section class="card" aria-labelledby="kh-h"><h2 id="kh-h">Knowledge Heatmap <span class="fid">#59</span> · Memory <span class="fid">#60</span></h2>
+      <div class="hm-grid" id="hm-grid"></div>
+      <div class="mem-bars" id="mem-bars"></div></section>
+    <!-- REVISION #56 + GUESS #62 -->
+    <section class="card" aria-labelledby="rv-h"><h2 id="rv-h">Revision Analytics <span class="fid">#56</span> · Guess vs Knowledge <span class="fid">#62</span></h2>
+      <div class="meter-row"><span>On time</span><span class="meter"><span id="rv-on" style="width:0%;background:var(--green)"></span></span><strong id="rv-on-v">—</strong></div>
+      <div class="meter-row"><span>Late</span><span class="meter"><span id="rv-late" style="width:0%;background:var(--saffron)"></span></span><strong id="rv-late-v">—</strong></div>
+      <div class="meter-row"><span>Skipped</span><span class="meter"><span id="rv-skip" style="width:0%;background:var(--red)"></span></span><strong id="rv-skip-v">—</strong></div>
+      <div class="gk-bar" role="img" aria-label="Guess vs knowledge split"><span class="know" style="width:64%"></span><span class="guess" style="width:22%"></span><span class="skip" style="width:14%"></span></div>
+      <div class="gk-legend"><span><i style="background:var(--green)"></i>Known 64%</span><span><i style="background:var(--red)"></i>Guessed 22%</span><span><i style="background:#cfc4ac"></i>Skipped 14%</span></div></section>
+    <!-- PRODUCTIVITY #184 -->
+    <section class="card" aria-labelledby="pa-h"><h2 id="pa-h">Productivity Analytics <span class="fid">#184</span></h2>
+      <div class="hours-bars" id="hours-bars"></div>
+      <p class="muted small">Study hours/day, last 7 days. Peak focus slot: 7–9 pm (demo).</p></section>
+  </div>
+
+  <!-- AI ANALYSIS + REPORTS -->
+  <section class="card wide" aria-labelledby="ai-h"><h2 id="ai-h">AI Test Analysis summary <span class="fid">#63</span></h2><div id="ai-out"></div></section>
+  <div class="grid2" style="margin-top:18px">
+    <section class="card" aria-labelledby="wr-h"><h2 id="wr-h">Weekly Performance Report <span class="fid">#189</span></h2>
+      <button class="btn btn-primary" id="wk-btn" type="button">Generate weekly report</button><div id="wk-out" aria-live="polite"></div></section>
+    <section class="card" aria-labelledby="mr-h"><h2 id="mr-h">Monthly Progress Report <span class="fid">#190</span></h2>
+      <button class="btn btn-dark" id="mo-btn" type="button">Generate monthly report</button><div id="mo-out" aria-live="polite"></div></section>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="preparation-twin.html">Twin</a><a href="focus.html">Focus</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Analytics demo — illustrative local data.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="analytics.js"></script>
+</body>
+</html>

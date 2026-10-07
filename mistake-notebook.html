@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mistake Intelligence — Why Wrong AI, categories, repeated mistakes and mistake-based tests.">
+<title>Mistake Intelligence — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mistake-notebook.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to mistakes</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="test-result.html">Results</a><a href="mistake-notebook.html" aria-current="page">Mistakes</a><a href="revision.html">Revision</a><a href="analytics.html">Analytics</a></nav>
+  <div class="top-actions"><span class="honest-chip">local demo model</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <div class="head-row">
+    <div><h1>Mistake Intelligence</h1><p class="muted">Every wrong answer is a free upgrade — if you know <em>why</em> it was wrong. <span class="fid">#64</span></p></div>
+    <div class="row">
+      <button class="btn btn-primary" id="mtest-btn" type="button">⚡ Mistake-Based Test <span class="fid">#66</span></button>
+      <button class="btn btn-dark" id="report-btn" type="button">📄 Error Report <span class="fid">#72</span></button>
+    </div>
+  </div>
+
+  <!-- repeated detection banner (#68) -->
+  <div class="repeat-banner" id="repeat-banner" role="status"></div>
+
+  <div class="mn-grid">
+    <!-- LIST -->
+    <section aria-label="Mistake entries">
+      <div class="row filter-bar">
+        <label class="sr-only" for="cat-filter">Filter by category</label>
+        <select id="cat-filter"><option value="">All categories</option><option>Conceptual</option><option>Memory lapse</option><option>Misread</option><option>Elimination error</option><option>Overthinking</option></select>
+        <span class="muted small" id="mn-count" role="status"></span>
+      </div>
+      <div id="mn-list" class="mn-list" aria-live="polite"></div>
+    </section>
+
+    <!-- SIDE -->
+    <aside class="side-col">
+      <section class="card" aria-labelledby="wc-h"><h2 id="wc-h">Weak Concept Detection <span class="fid">#69</span></h2><div id="wc-out"></div></section>
+      <section class="card" aria-labelledby="rs-h"><h2 id="rs-h">Mistake Revision Schedule <span class="fid">#70</span></h2><div id="rs-out"></div></section>
+      <section class="card" aria-labelledby="er-h"><h2 id="er-h">Personalized Error Report <span class="fid">#72</span></h2><div id="er-out"><div class="empty">Press “Error Report” above — the AI compiles patterns, fixes and a drill plan.</div></div></section>
+    </aside>
+  </div>
+
+  <section class="card hist-card" aria-labelledby="mh-h">
+    <h2 id="mh-h">Mistake History <span class="fid">#71</span></h2>
+    <div id="hist-out"></div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="test-interface.html">Test Interface</a><a href="preparation-twin.html">Twin</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Mistake Intelligence demo.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="mistake-notebook.js"></script>
+</body>
+</html>

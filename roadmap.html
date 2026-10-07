@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Personal UPSC Roadmap — adaptive stages from Foundation to Exam Ready, with tracks, countdown and readiness.">
+<title>Personal UPSC Roadmap — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="roadmap.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to roadmap</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="roadmap.html" aria-current="page">Roadmap</a><a href="preparation.html">Preparation</a><a href="ai-planner.html">Planner</a><a href="analytics.html">Analytics</a></nav>
+  <div class="top-actions"><span class="count-chip" id="rm-count">⏳ —</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <div class="head-row">
+    <div><h1>Personal UPSC Roadmap</h1>
+      <p class="muted">Foundation → Concept Building → PYQs → Mock Tests → Revision → Mains → Interview → Exam Ready. It adapts when your performance shifts. <span class="honest-chip">demo data</span></p></div>
+    <button class="btn btn-primary" id="replan" type="button">↻ Re-plan from latest performance</button>
+  </div>
+
+  <!-- TIMELINE -->
+  <section class="card" aria-labelledby="tl-h">
+    <h2 id="tl-h">The eight stages</h2>
+    <ol class="timeline" id="timeline"></ol>
+    <div id="stage-detail" aria-live="polite"></div>
+  </section>
+
+  <div class="rm-grid">
+    <!-- TRACKS -->
+    <section class="card" aria-labelledby="tr-h">
+      <h2 id="tr-h">Stage Tracks</h2>
+      <div class="track" id="tr-prelims"><strong>Prelims Preparation <span class="fid">#205</span></strong><div class="meter"><span style="width:0%" id="p-pre"></span></div><a class="text-link" href="mock-tests.html">Prelims practice →</a></div>
+      <div class="track"><strong>Mains Preparation <span class="fid">#206</span></strong><div class="meter"><span style="width:0%" id="p-mai"></span></div><a class="text-link" href="mains.html">Mains Center →</a></div>
+      <div class="track"><strong>Essay Preparation <span class="fid">#207</span></strong><div class="meter"><span style="width:0%" id="p-ess"></span></div><a class="text-link" href="mains.html">Essay prompts →</a></div>
+      <div class="track"><strong>Interview Preparation <span class="fid">#208</span></strong><div class="meter"><span style="width:0%" id="p-int"></span></div><p class="muted small">Unlocks at Mains readiness &gt; 70%.</p></div>
+      <h3 class="mini-h">GS Paper Tracking <span class="fid">#209</span></h3>
+      <div id="gs-out"></div>
+      <h3 class="mini-h">Optional Subject Tracking <span class="fid">#210</span></h3>
+      <div class="row"><select id="opt-sel" aria-label="Optional subject"><option>Anthropology</option><option>Geography</option><option selected>PSIR</option><option>Sociology</option><option>Public Administration</option></select>
+        <label class="sr-only" for="opt-prog">Optional syllabus covered</label>
+        <input type="range" id="opt-prog" min="0" max="100" step="5" value="35" style="flex:1">
+        <output id="opt-out">35%</output></div>
+      <div class="row sm-row">
+        <label class="check"><input type="radio" name="csat" value="not" checked> CSAT: not started <span class="fid">#211</span></label>
+        <label class="check"><input type="radio" name="csat" value="practice"> practising</label>
+        <label class="check"><input type="radio" name="csat" value="confident"> confident</label>
+      </div>
+      <div class="row sm-row">
+        <label class="check"><input type="radio" name="eth" value="not" checked> Ethics: not started <span class="fid">#212</span></label>
+        <label class="check"><input type="radio" name="eth" value="reading"> reading theory</label>
+        <label class="check"><input type="radio" name="eth" value="cases"> case studies</label>
+      </div>
+      <a class="btn btn-dark btn-sm" href="answer-writing.html" style="align-self:flex-start">✍️ Answer Writing track <span class="fid">#213</span></a>
+    </section>
+
+    <div class="side-col">
+      <!-- INTERVIEW SIMULATOR -->
+      <section class="card" aria-labelledby="is-h">
+        <h2 id="is-h">Interview Simulator <span class="fid">#214</span></h2>
+        <label class="sr-only" for="iv-theme">DAF theme</label>
+        <select id="iv-theme"><option>Your home state &amp; its issues</option><option>Why civil services?</option><option>Your optional subject</option><option>A current national debate</option></select>
+        <button class="btn btn-primary btn-sm" id="iv-gen" type="button">Generate panel questions</button>
+        <div id="iv-out" aria-live="polite"><div class="empty">The simulator drafts a realistic 3-question panel round from your DAF theme.</div></div>
+      </section>
+
+      <!-- STRATEGY -->
+      <section class="card" aria-labelledby="st-h">
+        <h2 id="st-h">Personalized Exam Strategy <span class="fid">#215</span></h2>
+        <button class="btn btn-dark btn-sm" id="st-gen" type="button">Generate strategy for my phase</button>
+        <div id="st-out" aria-live="polite"></div>
+      </section>
+
+      <!-- COUNTDOWN + READINESS -->
+      <section class="card" aria-labelledby="cd-h">
+        <h2 id="cd-h">Exam Countdown <span class="fid">#216</span> · Readiness <span class="fid">#217</span></h2>
+        <div class="cd-flex">
+          <div><p class="big-num" id="cd-days">—</p><p class="muted small">days to Prelims 2027 (indicative)</p></div>
+          <div class="donut" id="cd-donut" role="img" aria-label="Exam readiness"><div><strong id="cd-ready">—</strong><small>%</small></div></div>
+        </div>
+        <div class="meter-row"><span>Year consumed</span><span class="meter"><span id="cd-fill" style="width:0%"></span></span></div>
+        <label class="sr-only" for="cd-attempt">Target attempt</label>
+        <select id="cd-attempt"><option>2027</option><option>2028</option><option>2029</option></select>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="preparation.html">Preparation Center</a><a href="ai-planner.html">Planner</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Roadmap demo — durations adapt in the live product.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="roadmap.js"></script>
+</body>
+</html>

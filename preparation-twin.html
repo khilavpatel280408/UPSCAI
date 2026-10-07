@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI Preparation Twin — your digital preparation profile: strengths, weaknesses, memory and readiness.">
+<title>Preparation Twin — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="preparation-twin.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="tricolor" aria-hidden="true"></div>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg>
+    <span class="brand-txt">UPSC <strong>ZONE</strong> AI</span>
+  </a>
+  <nav class="topnav" aria-label="Primary">
+    <a href="dashboard.html">Dashboard</a><a href="preparation-twin.html" aria-current="page">Twin</a>
+    <a href="analytics.html">Analytics</a><a href="revision.html">Revision</a><a href="mock-tests.html">Tests</a>
+  </nav>
+  <div class="top-actions"><span class="honest-chip">local demo model</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="tw-main">
+  <div class="tw-head-row">
+    <div>
+      <h1>Your AI Preparation Twin <span class="fid">#10</span></h1>
+      <p class="sub">A live digital model of everything you've studied, forgotten, nailed and fumbled. <span class="honest-chip">honest demo data</span></p>
+    </div>
+    <div class="row">
+      <button class="btn btn-primary" id="resync" type="button">↻ Re-sync twin</button>
+      <a class="btn btn-ghost" href="analytics.html">Full analytics →</a>
+    </div>
+  </div>
+
+  <!-- ===== SCORES ROW: #58 #217 #49 ===== -->
+  <section class="grid3" id="scores-row" aria-label="Readiness scores">
+    <article class="card score-card">
+      <h2>Overall Readiness <span class="fid">#58</span></h2>
+      <div class="donut" id="dn-ready" role="img" aria-label="Overall readiness"><div><span id="v-ready">—</span><small>%</small></div></div>
+      <p class="muted" id="ready-note">Loading…</p>
+    </article>
+    <article class="card score-card">
+      <h2>Exam Readiness <span class="fid">#217</span></h2>
+      <div class="donut gold" id="dn-exam" role="img" aria-label="Exam readiness"><div><span id="v-exam">—</span><small>%</small></div></div>
+      <p class="muted" id="exam-note">Loading…</p>
+    </article>
+    <article class="card score-card">
+      <h2>Preparation Score <span class="fid">#49</span></h2>
+      <p class="big-num" id="v-prep">—</p>
+      <div class="meter-row"><span>Consistency</span><span class="meter"><span id="m-cons" style="width:0%"></span></span></div>
+      <div class="meter-row"><span>Coverage</span><span class="meter"><span id="m-cov" style="width:0%"></span></span></div>
+      <div class="meter-row"><span>Output quality</span><span class="meter"><span id="m-out" style="width:0%"></span></span></div>
+    </article>
+  </section>
+
+  <div class="tw-grid">
+    <!-- ===== LEFT ===== -->
+    <div class="col">
+      <!-- Memory meter #60 -->
+      <section class="card" aria-labelledby="mem-h">
+        <h2 id="mem-h">Memory Strength Meter <span class="fid">#60</span></h2>
+        <div class="mem-bars" id="mem-bars" aria-live="polite"></div>
+        <p class="muted small">Decay model: Ebbinghaus curve fitted to your revision history (demo).</p>
+      </section>
+
+      <!-- Weak topics #13 #54 #69 -->
+      <section class="card" aria-labelledby="wk-h">
+        <h2 id="wk-h">Weak-Topic Analysis <span class="fid">#13</span> <span class="fid">#54</span> <span class="fid">#69</span></h2>
+        <div id="weak-out" aria-live="polite"></div>
+        <a class="text-link" href="mistake-notebook.html">Open Mistake Intelligence →</a>
+      </section>
+
+      <!-- Strong topics #55 -->
+      <section class="card" aria-labelledby="st-h">
+        <h2 id="st-h">Strong-Topic Analysis <span class="fid">#55</span></h2>
+        <div id="strong-out" aria-live="polite"></div>
+        <p class="muted small">The twin protects these with lighter revision loads so time flows to weak areas.</p>
+      </section>
+    </div>
+
+    <!-- ===== RIGHT ===== -->
+    <div class="col">
+      <!-- Forgotten #82 + priority #83 -->
+      <section class="card" aria-labelledby="fg-h">
+        <h2 id="fg-h">Forgotten Topic Detection <span class="fid">#82</span> · Revision Priority <span class="fid">#83</span></h2>
+        <p class="muted small">Priority = 0.5 × memory decay + 0.3 × weakness + 0.2 × exam weight.</p>
+        <div id="forgotten-out" aria-live="polite"></div>
+      </section>
+
+      <!-- AI test analysis #63 -->
+      <section class="card" aria-labelledby="ta-h">
+        <h2 id="ta-h">AI Test Analysis <span class="fid">#63</span></h2>
+        <div id="test-out" aria-live="polite"></div>
+        <a class="text-link" href="test-result.html">Full result breakdown →</a>
+      </section>
+
+      <!-- Confidence #61 + adaptive #14 -->
+      <section class="card" aria-labelledby="cf-h">
+        <h2 id="cf-h">Confidence Tracker <span class="fid">#61</span></h2>
+        <label for="conf" class="muted">How confident do you feel today?</label>
+        <input type="range" id="conf" min="1" max="10" value="6" aria-describedby="conf-out">
+        <p class="conf-out" id="conf-out" aria-live="polite"></p>
+        <div class="field"><label for="adaptive">Adaptive Difficulty <span class="fid">#14</span></label>
+          <select id="adaptive">
+            <option value="balanced">Balanced — rebuild confidence</option>
+            <option value="standard" selected>UPSC Standard+ — real pressure</option>
+            <option value="expert">Expert — brutal, fast gains</option>
+          </select></div>
+        <p class="muted small" id="adaptive-note"></p>
+        <a class="btn btn-dark btn-block" href="mock-tests.html">Drill with adaptive tests →</a>
+      </section>
+    </div>
+  </div>
+</main>
+
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="revision.html">Revision Center</a><a href="roadmap.html">Roadmap</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Twin runs on honest local mock data.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="preparation-twin.js"></script>
+</body>
+</html>

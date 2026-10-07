@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Controlled App Access — allowed apps, time limits, emergency access and screen-time reporting.">
+<title>Controlled App Access — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app-control.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to app control</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="lock-in.html">Lock-In</a><a href="app-control.html" aria-current="page">App Control</a><a href="focus.html">Focus</a><a href="settings.html">Settings</a></nav>
+  <div class="top-actions"><span class="honest-chip">demo simulation</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <div class="head-row">
+    <div><h1>Controlled App Access</h1>
+      <p class="muted">Your phone works for the attempt, not against it.</p></div>
+    <button class="btn btn-primary" id="report-btn" type="button">📊 Screen-Time Report <span class="fid">#180</span></button>
+  </div>
+
+  <div class="ac-grid">
+    <!-- APP LIST -->
+    <section class="card" aria-labelledby="al-h">
+      <h2 id="al-h">Allowed vs Blocked Apps <span class="fid">#170</span> <span class="fid">#179</span></h2>
+      <div class="row small-row">
+        <label class="check"><input type="checkbox" id="autoblock" checked> Automatic App Blocking during study hours <span class="fid">#179</span></label>
+      </div>
+      <div class="row small-row">
+        <label class="check"><input type="checkbox" id="break-access"> Allow selected apps during breaks <span class="fid">#178</span></label>
+        <span class="muted small">Daily cap <span class="fid">#176</span>: <output id="cap-out">90</output> min
+          <input type="range" id="daily-cap" min="30" max="240" step="15" value="90" style="width:140px" aria-label="Maximum daily app usage"></span>
+      </div>
+      <div class="app-list" id="app-list" aria-live="polite"></div>
+      <p class="muted small">Tap a blocked app to simulate an attempt — the blocker logs it (#177 monitoring).</p>
+    </section>
+
+    <div class="side-col">
+      <!-- PHONE + EMERGENCY -->
+      <section class="card" aria-labelledby="ph-h">
+        <h2 id="ph-h">Phone / Call Access <span class="fid">#172</span> · Emergency Contacts <span class="fid">#173</span></h2>
+        <label class="check"><input type="checkbox" id="phone-access" checked> Incoming calls allowed</label>
+        <p class="muted small">Emergency contacts always break through — even inside Lock-In.</p>
+        <div id="em-list"></div>
+        <div class="row">
+          <input type="text" id="em-name" placeholder="Contact name" aria-label="Emergency contact name">
+          <input type="text" id="em-num" placeholder="Phone number" aria-label="Emergency contact number">
+          <button class="btn btn-dark btn-sm" id="em-add" type="button">+ Add</button>
+        </div>
+        <p class="field-err" id="em-err" hidden></p>
+      </section>
+
+      <!-- REPORT -->
+      <section class="card" aria-labelledby="rp-h">
+        <h2 id="rp-h">App Usage Monitoring <span class="fid">#177</span></h2>
+        <div id="mon-out"><div class="empty">Usage accumulates as the day progresses (demo data seeded).</div></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="card" aria-labelledby="sr-h">
+    <h2 id="sr-h">Today's Screen-Time Report</h2>
+    <div id="report-out"><div class="empty">Press “Screen-Time Report” to compile today's usage, blocks and limits.</div></div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="lock-in.html">Lock-In</a><a href="settings.html">Settings</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · App control is a demo simulation — no real device control.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="app-control.js"></script>
+</body>
+</html>

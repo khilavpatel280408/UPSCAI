@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Universal AI Search — one query across notes, PYQs, current affairs, videos, questions and resources.">
+<title>Universal AI Search — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="search.css">
+</head>
+<body>
+<a class="skip-link" href="#q">Skip to search</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="search.html" aria-current="page">Search</a><a href="notes.html">Notes</a><a href="pyq.html">PYQ</a><a href="research.html">Research</a></nav>
+  <div class="top-actions"><span class="honest-chip">local demo index</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Universal AI Search <span class="fid">#229</span></h1>
+  <p class="muted" style="margin-bottom:18px">One query, every surface: notes, PYQs, current affairs, videos, questions, resources. <span class="fid">#237</span></p>
+
+  <section class="card search-hero" aria-labelledby="sh-h">
+    <h2 id="sh-h" class="sr-only">Search bar</h2>
+    <form id="s-form" class="s-row">
+      <span class="s-ico" aria-hidden="true">🔍</span>
+      <label class="sr-only" for="q">Search everything</label>
+      <input type="text" id="q" placeholder='Try “Federalism” (the demo query), “monsoon”, “repo rate”…' autocomplete="off">
+      <button class="btn btn-primary" type="submit">Search everything</button>
+    </form>
+    <div class="row opt-row">
+      <label class="check"><input type="checkbox" id="sem-mode" checked> AI Semantic Search <span class="fid">#236</span> <span class="muted small">— expands synonyms &amp; syllabus links</span></label>
+      <span class="muted small" id="recent-wrap"></span>
+    </div>
+    <p class="field-err" id="s-err" hidden></p>
+    <div id="s-stages" class="stages" hidden><span class="stage">Parse intent</span><span class="stage">Expand meaning</span><span class="stage">Rank sources</span></div>
+  </section>
+
+  <div class="tabs" id="type-tabs" role="tablist" aria-label="Result type filters" hidden>
+    <button class="tab active" data-t="" role="tab" aria-selected="true" type="button">All <b id="c-all"></b></button>
+    <button class="tab" data-t="note" role="tab" aria-selected="false" type="button">Notes <span class="fid">#230</span> <b id="c-note"></b></button>
+    <button class="tab" data-t="pyq" role="tab" aria-selected="false" type="button">PYQs <span class="fid">#231</span> <b id="c-pyq"></b></button>
+    <button class="tab" data-t="ca" role="tab" aria-selected="false" type="button">Current Affairs <span class="fid">#232</span> <b id="c-ca"></b></button>
+    <button class="tab" data-t="video" role="tab" aria-selected="false" type="button">Videos <span class="fid">#233</span> <b id="c-video"></b></button>
+    <button class="tab" data-t="question" role="tab" aria-selected="false" type="button">Questions <span class="fid">#234</span> <b id="c-question"></b></button>
+    <button class="tab" data-t="resource" role="tab" aria-selected="false" type="button">Resources <span class="fid">#235</span> <b id="c-resource"></b></button>
+  </div>
+
+  <section id="results" class="results" aria-live="polite">
+    <div class="empty-big">🧭 Type a query above — or press Search with the demo query “Federalism” pre-filled for you.</div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="topic-explorer.html">Topic Explorer</a><a href="ai-browser.html">Study Browser</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Search runs over an honest local demo index.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="search.js"></script>
+</body>
+</html>

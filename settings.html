@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Settings & Controls — whitelists, blacklists, blocking rules, app limits and Lock-In safety.">
+<title>Settings / Controls — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to settings</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="lock-in.html">Lock-In</a><a href="app-control.html">App Control</a><a href="ai-browser.html">Study Browser</a><a href="settings.html" aria-current="page">Settings</a></nav>
+  <div class="top-actions"><span class="honest-chip">changes persist locally</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <div class="head-row"><div>
+    <h1>Settings / Controls</h1>
+    <p class="muted">One control room for every guardrail: web, channels, blocking and app access. Changes apply to the pages that read the same stores.</p></div>
+    <button class="btn btn-primary" id="save-all" type="button">💾 Save all settings</button>
+  </div>
+
+  <div class="st-grid">
+    <!-- WEB -->
+    <section class="card" aria-labelledby="wb-h">
+      <h2 id="wb-h">Study Web <span class="fid">#122</span> <span class="fid">#169</span> <span class="fid">#123</span> <span class="fid">#143</span></h2>
+      <h3 class="mini-h">Study Website Whitelist (#122 / #169)</h3>
+      <div id="wl-out"></div>
+      <div class="row"><input type="text" id="wl-add" placeholder="add-study-site.gov.in" aria-label="Add whitelist domain"><button class="btn btn-dark btn-sm" id="wl-btn" type="button">+ Add</button></div>
+      <h3 class="mini-h">Website Blacklist (#123)</h3>
+      <div id="bl-out"></div>
+      <div class="row"><input type="text" id="bl-add" placeholder="distracting-site.com" aria-label="Add blacklist domain"><button class="btn btn-dark btn-sm" id="bl-btn" type="button">+ Add</button></div>
+      <h3 class="mini-h">Study Channel Whitelist (#143)</h3>
+      <div id="ch-out"></div>
+      <p class="field-err" id="web-err" hidden></p>
+    </section>
+
+    <!-- BLOCKING -->
+    <section class="card" aria-labelledby="bk-h">
+      <h2 id="bk-h">Blocking engine</h2>
+      <label class="switch-row"><span class="switch"><input type="checkbox" id="b-distr"><span class="slider-ui"></span></span><span>Distraction blocking (#165)</span></label>
+      <label class="switch-row"><span class="switch"><input type="checkbox" id="b-notif"><span class="slider-ui"></span></span><span>Notification blocking (#166)</span></label>
+      <label class="switch-row"><span class="switch"><input type="checkbox" id="b-social"><span class="slider-ui"></span></span><span>Social media blocking (#167)</span></label>
+      <label class="switch-row"><span class="switch"><input type="checkbox" id="b-ent"><span class="slider-ui"></span></span><span>Entertainment website blocking (#168)</span></label>
+      <p class="muted small">These rules feed Lock-In Mode and the Focus engine.</p>
+      <h3 class="mini-h">Emergency Exit control (#159)</h3>
+      <p class="muted small">Lock-In requires a typed phrase before early exit. Standard phrase: <code>I ACCEPT THE COST</code>. Test yours below.</p>
+      <div class="row"><input type="text" id="exit-test" placeholder="Type the exit phrase…" aria-label="Emergency exit phrase test"><button class="btn btn-dark btn-sm" id="exit-check" type="button">Test phrase</button></div>
+      <p id="exit-out" aria-live="polite"></p>
+    </section>
+
+    <!-- APPS -->
+    <section class="card wide" aria-labelledby="ap-h">
+      <h2 id="ap-h">App Access &amp; Limits <span class="fid">#170</span>–<span class="fid">#179</span></h2>
+      <div class="row limits-row">
+        <label class="check"><input type="checkbox" id="a-auto"> Automatic App Blocking (#179)</label>
+        <label class="check"><input type="checkbox" id="a-break"> Break-Time App Access (#178)</label>
+        <label class="check"><input type="checkbox" id="a-phone"> Phone / Call Access (#172)</label>
+        <span class="muted small">Daily cap (#176): <output id="cap-out">90</output> min <input type="range" id="a-cap" min="30" max="240" step="15" value="90" style="width:150px" aria-label="Maximum daily app usage"></span>
+      </div>
+      <div id="apps-out" aria-live="polite"></div>
+      <h3 class="mini-h">Emergency Contacts (#173) — always allowed</h3>
+      <div id="em-out"></div>
+      <div class="row"><input type="text" id="em-name" placeholder="Name" aria-label="Contact name"><input type="text" id="em-num" placeholder="Number" aria-label="Contact number"><button class="btn btn-dark btn-sm" id="em-add" type="button">+ Add</button></div>
+      <p class="field-err" id="app-err" hidden></p>
+    </section>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="app-control.html">App Control</a><a href="lock-in.html">Lock-In</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Settings demo — rules are simulated, not device-level.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="settings.js"></script>
+</body>
+</html>
