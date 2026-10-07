@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shared Design + Integration System — tokens, schemas, API contracts and routing for UPSC ZONE AI.">
+<title>Shared System — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared-system.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to shared system</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="shared-system.html" aria-current="page">Shared System</a></nav>
+  <div class="top-actions"><span class="honest-chip">integration hub</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Shared Design + Integration System</h1>
+  <p class="muted" style="margin-bottom:20px">The contract that keeps all 37 pages one product: tokens, components, data schema, API surface, routing and accessibility.</p>
+
+  <!-- TABS -->
+  <div class="tabs" role="tablist" aria-label="System sections">
+    <button class="tab active" data-p="tokens" role="tab" aria-selected="true" type="button">Design Tokens</button>
+    <button class="tab" data-p="components" role="tab" aria-selected="false" type="button">Components</button>
+    <button class="tab" data-p="schema" role="tab" aria-selected="false" type="button">Data Schema</button>
+    <button class="tab" data-p="api" role="tab" aria-selected="false" type="button">Mock API Contracts</button>
+    <button class="tab" data-p="routing" role="tab" aria-selected="false" type="button">Routing Map</button>
+    <button class="tab" data-p="a11y" role="tab" aria-selected="false" type="button">Accessibility</button>
+  </div>
+
+  <!-- TOKENS -->
+  <section class="panel card" data-panel="tokens" aria-labelledby="tk-h">
+    <h2 id="tk-h">Design tokens <span class="muted small">click any token to copy its value</span></h2>
+    <h3 class="mini-h">Color</h3>
+    <div class="swatch-grid" id="color-grid"></div>
+    <h3 class="mini-h">Typography</h3>
+    <div class="type-samples">
+      <p class="ts-display">Fraunces — display / headings</p>
+      <p class="ts-body">Public Sans — body, controls, data. Serious, readable, government-grade.</p>
+      <p class="ts-mono">--radius: 14px · --shadow: soft-elevation · spacing scale 4/8/12/18/22/26px</p>
+    </div>
+    <h3 class="mini-h">Identity rules</h3>
+    <ul class="rules-list"><li>Tricolor 6px hairline at the very top of every page.</li><li>Navy surfaces for authority; saffron only for primary action; gold for focus + accents.</li><li>Feature IDs shown as navy/gold chips (#fid) — never removed from controls.</li><li>Honest chips label every mock/demo surface.</li></ul>
+  </section>
+
+  <!-- COMPONENTS -->
+  <section class="panel card" data-panel="components" hidden aria-labelledby="cm-h">
+    <h2 id="cm-h">Component conventions — live samples</h2>
+    <h3 class="mini-h">Buttons</h3>
+    <div class="row"><button class="btn btn-primary" type="button">Primary</button><button class="btn btn-dark" type="button">Dark</button><button class="btn btn-ghost" type="button">Ghost</button><button class="btn btn-primary" disabled type="button">Disabled</button></div>
+    <h3 class="mini-h">Switch (interactive)</h3>
+    <label class="switch-row"><span class="switch"><input type="checkbox" id="demo-switch" checked><span class="slider-ui"></span></span><span id="demo-switch-lbl">Demo switch ON</span></label>
+    <h3 class="mini-h">Meter (animates on click)</h3>
+    <div class="meter-row"><span>Sample meter</span><span class="meter"><span id="demo-meter" style="width:20%"></span></span><button class="btn btn-ghost btn-sm" id="meter-btn" type="button">Randomize</button></div>
+    <h3 class="mini-h">Tabs convention</h3>
+    <p class="muted small">role=tablist/tab/tabpanel · arrow-key navigation · aria-selected · one active panel. Used on index.html demo, revision.html and this hub.</p>
+    <h3 class="mini-h">States required everywhere</h3>
+    <div class="state-grid">
+      <div class="empty">Empty state sample</div>
+      <div class="loading-row"><span class="spinner"></span> Loading state sample</div>
+      <div class="ok-row">✓ Success state sample</div>
+      <div class="err-row">✗ Error state sample</div>
+    </div>
+  </section>
+
+  <!-- SCHEMA -->
+  <section class="panel card" data-panel="schema" hidden aria-labelledby="sc-h">
+    <h2 id="sc-h">localStorage schema — live inspector</h2>
+    <p class="muted small">All demo state lives under <code>uza_*</code> keys. This inspector reads your browser right now.</p>
+    <div class="row"><button class="btn btn-dark btn-sm" id="scan-btn" type="button">↻ Re-scan storage</button>
+      <button class="btn btn-ghost btn-sm" id="export-btn" type="button">⬇ Export all data (JSON)</button>
+      <button class="btn btn-ghost btn-sm danger" id="wipe-btn" type="button">🗑 Clear all demo data</button></div>
+    <div id="schema-out" aria-live="polite"></div>
+    <h3 class="mini-h">Cross-page data contracts</h3>
+    <table class="contract"><thead><tr><th>Key</th><th>Written by</th><th>Read by</th></tr></thead><tbody>
+      <tr><td><code>uza_session_v1</code></td><td>login</td><td>all authenticated surfaces</td></tr>
+      <tr><td><code>uza_onboarding_v1</code></td><td>onboarding</td><td>dashboard, roadmap, profile</td></tr>
+      <tr><td><code>uza_generated_test</code></td><td>mock-tests, mistake-notebook, pyq, mains</td><td>test-interface (?mode=custom)</td></tr>
+      <tr><td><code>uza_last_result</code> / <code>uza_test_history</code></td><td>test-interface</td><td>test-result, analytics</td></tr>
+      <tr><td><code>uza_ca_notes_v1</code></td><td>current-affairs, ai-browser, study-youtube</td><td>notes bridge</td></tr>
+      <tr><td><code>uza_browser_v1</code> / <code>uza_appctl_v1</code> / <code>uza_youtube_v1</code> / <code>uza_lockin_v1</code></td><td>owner pages + settings</td><td>ai-browser, app-control, study-youtube, lock-in</td></tr>
+      <tr><td><code>uza_signup_v1</code> / <code>uza_accounts_v1</code></td><td>signup</td><td>login, forgot-password, profile</td></tr>
+    </tbody></table>
+  </section>
+
+  <!-- API -->
+  <section class="panel card" data-panel="api" hidden aria-labelledby="ap-h">
+    <h2 id="ap-h">Mock API contracts — swap-ready</h2>
+    <p class="muted small">Every page isolates its backend calls in one API object. Replace the mock body with a real fetch — signatures stay stable.</p>
+    <table class="contract"><thead><tr><th>Endpoint</th><th>Owner page</th><th>Returns</th></tr></thead><tbody id="api-tbody"></tbody></table>
+  </section>
+
+  <!-- ROUTING -->
+  <section class="panel card" data-panel="routing" hidden aria-labelledby="rt-h">
+    <h2 id="rt-h">Routing map — the approved 37</h2>
+    <p class="muted small">Rule: internal navigation may only use these 37 filenames. No dead links. Signature owners marked ★.</p>
+    <div class="route-grid" id="route-grid"></div>
+  </section>
+
+  <!-- A11Y -->
+  <section class="panel card" data-panel="a11y" hidden aria-labelledby="ax-h">
+    <h2 id="ax-h">Accessibility conventions — checklist</h2>
+    <div id="a11y-out"></div>
+    <div class="row"><button class="btn btn-dark btn-sm" id="a11y-reset" type="button">Reset checklist</button>
+      <span class="muted small" id="a11y-score"></span></div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="index.html">Home</a><a href="dashboard.html">Dashboard</a><a href="settings.html">Settings</a><a href="profile.html">Profile</a></nav><p>© 2026 UPSC ZONE AI · This hub documents the integration contract honestly — demo data only.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="shared-system.js"></script>
+</body>
+</html>

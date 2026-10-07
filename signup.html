@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create your UPSC ZONE AI account — AI-powered UPSC preparation.">
+<title>Create account — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="signup.css">
+</head>
+<body>
+<a class="skip-link" href="name">Skip to signup form</a>
+<div class="tricolor" aria-hidden="true"></div>
+<div class="auth-shell">
+  <aside class="brand-pane">
+    <a class="brand" href="index.html">
+      <svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg>
+      <span class="brand-txt">UPSC <strong>ZONE</strong> AI</span>
+    </a>
+    <div class="brand-body">
+      <p class="brand-kicker">Begin your preparation engine</p>
+      <h2 class="brand-line">One account. Five pillars.<br>LEARN → PRACTICE → ANALYZE → REVISE → FOCUS.</h2>
+      <ul class="perks">
+        <li>🗺 Personal roadmap built from your attempt year</li>
+        <li>🤖 AI copilot, planner and preparation twin</li>
+        <li>🔒 Lock-In focus mode with app control</li>
+        <li>📊 Mistake intelligence that finds why you went wrong</li>
+      </ul>
+    </div>
+    <p class="brand-foot">Demo build · accounts stored locally only · Not affiliated with UPSC</p>
+  </aside>
+
+  <main class="form-pane">
+    <div class="form-wrap">
+      <a href="index.html" class="back-link">← Back to home</a>
+      <h1>Create your aspirant account</h1>
+      <p class="form-sub">Takes 30 seconds. The AI starts personalizing immediately.</p>
+
+      <div id="banner" class="banner" role="alert" hidden></div>
+
+      <div id="success-card" class="card success-card" tabindex="-1" hidden>
+        <div class="check-ring" aria-hidden="true">✓</div>
+        <h2>Account created</h2>
+        <p>Welcome, <strong id="su-name">aspirant</strong>. Next: a 2-minute onboarding so the AI can build your roadmap.</p>
+        <a class="btn btn-primary" href="onboarding.html">Start Onboarding →</a>
+      </div>
+
+      <form id="signup-form" novalidate>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-err" placeholder="e.g. Priya Nair">
+          <p class="field-err" id="name-err" hidden></p>
+        </div>
+        <div class="field">
+          <label for="email">Email address</label>
+          <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-err" placeholder="you@example.com">
+          <p class="field-err" id="email-err" hidden></p>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="attempt">Target attempt</label>
+            <select id="attempt"><option>2027</option><option>2028</option><option>2029</option></select>
+          </div>
+          <div class="field">
+            <label for="optional">Optional subject</label>
+            <select id="optional">
+              <option>Undecided</option><option>Anthropology</option><option>Geography</option><option>PSIR</option>
+              <option>Sociology</option><option>Public Administration</option><option>History</option>
+              <option>Economics</option><option>Mathematics</option><option>English Literature</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="new-password" required minlength="8" aria-describedby="pass-err">
+          <div class="strength" aria-hidden="true"><span id="strength-bar"></span></div>
+          <p class="strength-label" id="strength-label" aria-live="polite">Minimum 8 characters</p>
+          <p class="field-err" id="pass-err" hidden></p>
+        </div>
+        <div class="field">
+          <label for="confirm">Confirm password</label>
+          <input type="password" id="confirm" autocomplete="new-password" required aria-describedby="confirm-err">
+          <p class="field-err" id="confirm-err" hidden></p>
+        </div>
+        <div class="field check-field">
+          <label class="remember"><input type="checkbox" id="terms" aria-describedby="terms-err"><span>I agree to the demo terms — this is a local evaluation build.</span></label>
+          <p class="field-err" id="terms-err" hidden></p>
+        </div>
+        <button class="btn btn-primary btn-block" id="submit-btn" type="submit">Create account →</button>
+      </form>
+
+      <div id="demo-box" class="demo-box">
+        <p>🧪 <strong>Honest demo:</strong> accounts are saved only in this browser (localStorage). The demo account <code>aspirant@upsczone.ai</code> already exists — try signing up with it to see the error state.</p>
+      </div>
+      <p class="alt-auth">Already registered? <a href="login.html">Log in →</a></p>
+    </div>
+    <footer class="form-foot">
+      <nav><a href="index.html">Home</a><a href="login.html">Login</a><a href="forgot-password.html">Forgot password</a><a href="onboarding.html">Onboarding</a><a href="shared-system.html">Shared System</a></nav>
+      <p>© 2026 UPSC ZONE AI</p>
+    </footer>
+  </main>
+</div>
+<script src="signup.js"></script>
+</body>
+</html>

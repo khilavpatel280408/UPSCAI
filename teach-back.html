@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Teach-Back Session — teach the topic, face follow-ups, pass the oral quiz.">
+<title>Teach-Back Session — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="teach-back.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to session</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="active-learning.html">Active Learning</a><a href="teach-back.html" aria-current="page">Teach-Back</a><a href="notes.html">Notes</a><a href="revision.html">Revision</a></nav>
+  <div class="top-actions"><span class="honest-chip">local demo model</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Teach-Back Session <span class="fid">#110</span></h1>
+  <p class="muted" style="margin-bottom:18px">The Feynman rule: if you can't teach it simply, you don't own it yet.</p>
+
+  <section class="card" aria-labelledby="tb-h">
+    <h2 id="tb-h">1 · Teach the topic</h2>
+    <div class="row">
+      <label class="sr-only" for="tb-topic">Topic</label>
+      <select id="tb-topic"><option value="monsoon">Indian Monsoon</option><option value="monetary">Monetary Policy</option><option value="art32">Article 32 vs Article 226</option><option value="federalism">Federalism</option></select>
+      <button class="btn btn-ghost btn-sm" id="tb-hear" type="button">🔊 Hear the prompt (#112)</button>
+    </div>
+    <label class="sr-only" for="tb-teach">Your teaching</label>
+    <textarea id="tb-teach" rows="6" placeholder="Teach this topic to a smart 12-year-old. No jargon without explanation…"></textarea>
+    <p class="field-err" id="tb-err" hidden></p>
+    <button class="btn btn-primary" id="tb-submit" type="button">Deliver my lesson</button>
+    <div id="tb-out" aria-live="polite"></div>
+  </section>
+
+  <section class="card" aria-labelledby="fu-h" id="fu-card" hidden>
+    <h2 id="fu-h">2 · AI Follow-Up Questions <span class="fid">#118</span></h2>
+    <div id="fu-list"></div>
+  </section>
+
+  <section class="card" aria-labelledby="oq-h" id="oq-card" hidden>
+    <h2 id="oq-h">3 · AI Oral Quiz on the same topic <span class="fid">#111</span> · Explain Your Answer <span class="fid">#117</span></h2>
+    <div id="oq-list"></div>
+  </section>
+
+  <section class="card" aria-labelledby="hs-h">
+    <h2 id="hs-h">Session history</h2>
+    <div id="hist-out"><div class="empty">No teach-back sessions yet — deliver your first lesson above.</div></div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="active-learning.html">Active Learning Lab</a><a href="ai-copilot.html">Copilot</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Teach-Back runs on honest local demo logic.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="teach-back.js"></script>
+</body>
+</html>

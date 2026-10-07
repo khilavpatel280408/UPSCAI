@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Research Workspace — deep research mode, saved sessions, source collection and resource search.">
+<title>Research Workspace — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="research.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to research</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="ai-browser.html">Study Browser</a><a href="research.html" aria-current="page">Research</a><a href="current-affairs.html">CA Hub</a><a href="notes.html">Notes</a></nav>
+  <div class="top-actions"><span class="honest-chip">local demo model</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>Research Workspace <span class="fid">#134</span></h1>
+  <p class="muted" style="margin-bottom:18px">Deep, credible, syllabus-anchored research — collected, ranked and saved.</p>
+
+  <section class="card" aria-labelledby="rr-h">
+    <h2 id="rr-h">AI Research Assistant <span class="fid">#9</span> · Deep Research Mode <span class="fid">#128</span></h2>
+    <form id="res-form" class="row">
+      <label class="sr-only" for="res-topic">Research topic</label>
+      <input type="text" id="res-topic" placeholder="e.g. Inter-state river disputes, Semiconductor policy, Simultaneous elections" style="flex:2">
+      <button class="btn btn-primary" type="submit">🕵 Run deep research</button>
+    </form>
+    <p class="field-err" id="res-err" hidden></p>
+    <div id="res-stages" class="stages" aria-live="polite" hidden>
+      <span class="stage" data-s="0">Collect</span><span class="stage" data-s="1">Rank</span><span class="stage" data-s="2">Synthesize</span>
+    </div>
+    <div id="res-out" aria-live="polite"><div class="empty">The assistant frames the question, collects credible sources, ranks them by credibility and hands you Mains-ready hooks.</div></div>
+  </section>
+
+  <div class="duo">
+    <section class="card" aria-labelledby="ss-h">
+      <h2 id="ss-h">Saved Research Sessions <span class="fid">#137</span> · Auto Source Collection <span class="fid">#138</span></h2>
+      <div id="sess-out"><div class="empty">No saved sessions yet — run research above, then press “Save session”.</div></div>
+    </section>
+    <section class="card" aria-labelledby="rs-h">
+      <h2 id="rs-h">Search Resources <span class="fid">#235</span></h2>
+      <label class="sr-only" for="lib-q">Search the resource library</label>
+      <input type="search" id="lib-q" placeholder="🔍 Books, committees, reports…">
+      <div id="lib-out" style="margin-top:8px"></div>
+    </section>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="ai-browser.html">AI Study Browser</a><a href="topic-explorer.html">Topic Explorer</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Research demo — honest local mock sources.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="research.js"></script>
+</body>
+</html>

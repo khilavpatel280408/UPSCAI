@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Study-Only YouTube — UPSC video search, filtering, transformations, watch tracking, distraction blocking.">
+<title>Study-Only YouTube — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="study-youtube.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to study YouTube</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="ai-browser.html">Study Browser</a><a href="study-youtube.html" aria-current="page">Study YouTube</a><a href="revision.html">Revision</a><a href="lock-in.html">Lock-In</a></nav>
+  <div class="top-actions"><span class="honest-chip">simulated video platform</span><span class="watch-chip" id="watch-total">⏱ 0m today</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <div class="head-row">
+    <div><h1>Study-Only YouTube <span class="fid">#139</span></h1>
+      <p class="muted">UPSC videos in, everything else out. Search, watch, transform, track.</p></div>
+    <form id="vy-form" class="vsearch">
+      <label class="sr-only" for="vy-q">Search UPSC videos (#233)</label>
+      <input type="search" id="vy-q" placeholder="🔍 Search UPSC videos (#233)… try monsoon, polity, or 'movie'">
+      <button class="btn btn-primary" type="submit">Search (#140)</button>
+    </form>
+  </div>
+
+  <div class="ctrl-row">
+    <label class="switch-lbl"><input type="checkbox" id="block-shorts" checked><span>Block Shorts <span class="fid">#150</span></span></label>
+    <label class="switch-lbl"><input type="checkbox" id="block-ent" checked><span>Block entertainment <span class="fid">#151</span></span></label>
+    <button class="btn btn-ghost btn-sm" id="chan-btn" type="button">📺 Channel whitelist <span class="fid">#143</span></button>
+    <span class="muted small">AI content filter <span class="fid">#141</span> · UPSC-only recommendations <span class="fid">#142</span> · distraction detection <span class="fid">#152</span></span>
+  </div>
+
+  <div id="mgmt-out" aria-live="polite"></div>
+  <div id="banner-out" aria-live="polite"></div>
+
+  <!-- PLAYER -->
+  <section class="card player-card" id="player-card" hidden aria-labelledby="pl-h">
+    <h2 id="pl-h">Now studying</h2>
+    <div id="player"></div>
+  </section>
+
+  <!-- RECO STRIP -->
+  <section aria-labelledby="rc-h">
+    <h2 class="sec-h" id="rc-h">Recommended for you <span class="fid">#142</span></h2>
+    <div class="vid-strip" id="reco-strip"></div>
+  </section>
+
+  <!-- LIBRARY -->
+  <section aria-labelledby="lb-h">
+    <h2 class="sec-h" id="lb-h">UPSC video library</h2>
+    <div class="vid-grid" id="vid-grid" aria-live="polite"></div>
+  </section>
+
+  <!-- TRANSFORM OUTPUT -->
+  <section class="card" aria-labelledby="tf-h">
+    <h2 id="tf-h">Video transformations</h2>
+    <div id="tf-out"><div class="empty">Play a video, then use: Summary <span class="fid">#144</span> · Notes <span class="fid">#145</span> · MCQs <span class="fid">#146</span> · Flashcards <span class="fid">#147</span> · Mind Map <span class="fid">#148</span>.</div></div>
+  </section>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="focus.html">Focus</a><a href="settings.html">Settings</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · Simulated study platform — honest demo, no real videos fetched.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="study-youtube.js"></script>
+</body>
+</html>

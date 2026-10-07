@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Live Test Interface — timed UPSC exam engine with palette, autosave and adaptive modes.">
+<title>Live Test — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="test-interface.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to test</a>
+<div class="tricolor" aria-hidden="true"></div>
+
+<!-- PRE-TEST / START SCREEN -->
+<main id="main" class="main">
+  <section class="card start-card" id="start-card">
+    <p class="muted"><a class="text-link" href="mock-tests.html">← Back to Test Center</a></p>
+    <h1 id="st-title">Loading test…</h1>
+    <p class="muted" id="st-desc"></p>
+    <ul class="rules" id="st-rules"></ul>
+    <div class="row" style="margin-top:6px">
+      <button class="btn btn-primary" id="start-btn" type="button">Start Test →</button>
+      <span class="honest-chip">demo question bank · honest mock</span>
+    </div>
+    <p class="field-err" id="st-err" hidden></p>
+  </section>
+
+  <!-- ACTIVE TEST -->
+  <section class="exam" id="exam" hidden>
+    <header class="exam-bar">
+      <div><strong id="ex-mode"></strong> <span class="fid" id="ex-fid"></span>
+        <p class="muted small" id="ex-adaptive" aria-live="polite"></p></div>
+      <div class="timer-box" role="timer" aria-live="off"><span class="muted small">Time left</span><strong id="ex-timer">--:--</strong></div>
+      <button class="btn btn-primary btn-sm" id="submit-btn" type="button">Submit</button>
+    </header>
+    <div class="pressure-banner" id="pressure-banner" hidden>🔥 EXAM PRESSURE MODE — the clock is unforgiving. No comfort breaks. <span class="fid">#45</span></div>
+    <div class="exam-grid">
+      <section class="q-card" aria-labelledby="q-num">
+        <div class="q-head"><span id="q-num">Question 1</span><span class="row"><span class="q-meta" id="q-meta"></span>
+          <button class="btn btn-ghost btn-sm" id="mark-btn" type="button" aria-pressed="false">🚩 Mark for review</button>
+          <button class="btn btn-ghost btn-sm" id="clear-btn" type="button">Clear</button></span></div>
+        <div class="rapid-bar" id="rapid-bar" hidden aria-hidden="true"><span id="rapid-fill"></span></div>
+        <p class="q-text" id="q-text"></p>
+        <div class="q-opts" id="q-opts" role="radiogroup" aria-label="Answer options"></div>
+        <div class="q-nav">
+          <button class="btn btn-ghost" id="prev-btn" type="button">← Previous</button>
+          <span class="muted small">Keys: 1–4 answer · ←/→ navigate · M mark</span>
+          <button class="btn btn-dark" id="next-btn" type="button">Next →</button>
+        </div>
+      </section>
+      <aside class="palette" aria-label="Question palette">
+        <h2 class="pal-h">Palette</h2>
+        <div class="pal-grid" id="pal-grid"></div>
+        <ul class="pal-legend">
+          <li><span class="dot cur"></span> Current</li><li><span class="dot ans"></span> Answered</li>
+          <li><span class="dot mark"></span> Marked</li><li><span class="dot none"></span> Unseen</li>
+        </ul>
+        <p class="muted small" id="autosave-note">Autosaved ✓</p>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><nav><a href="mock-tests.html">Test Center</a><a href="test-result.html">Results</a><a href="analytics.html">Analytics</a><a href="dashboard.html">Dashboard</a></nav><p>© 2026 UPSC ZONE AI · Exam engine demo — answers autosave locally.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="test-interface.js"></script>
+</body>
+</html>

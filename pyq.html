@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="PYQ Intelligence — search, analyse and practice previous year UPSC questions.">
+<title>PYQ Intelligence — UPSC ZONE AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="pyq.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to PYQ</a>
+<div class="tricolor" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="index.html"><svg class="chakra" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="17" fill="none" stroke="currentColor" stroke-width="2.4"/><circle cx="20" cy="20" r="3.2" fill="currentColor"/><g stroke="currentColor" stroke-width="1.4"><line x1="20" y1="4" x2="20" y2="36"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(30 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(60 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(90 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(120 20 20)"/><line x1="20" y1="4" x2="20" y2="36" transform="rotate(150 20 20)"/></g></svg><span class="brand-txt">UPSC <strong>ZONE</strong> AI</span></a>
+  <nav class="topnav"><a href="dashboard.html">Dashboard</a><a href="mock-tests.html">Tests</a><a href="pyq.html" aria-current="page">PYQ</a><a href="analytics.html">Analytics</a><a href="revision.html">Revision</a></nav>
+  <div class="top-actions"><span class="honest-chip">demo PYQ bank</span><a class="avatar" href="profile.html" aria-label="Profile">AS</a></div>
+</header>
+
+<main id="main" class="main">
+  <h1>PYQ Intelligence</h1>
+  <p class="muted" style="margin-bottom:18px">Previous-year questions are the syllabus speaking. Search them, read their patterns, practice them. <span class="fid">#40</span></p>
+
+  <!-- SEARCH #231 -->
+  <section class="card search-card" aria-labelledby="sr-h">
+    <h2 id="sr-h">Search PYQs <span class="fid">#231</span></h2>
+    <div class="search-row">
+      <input type="search" id="pyq-q" placeholder="🔍 e.g. monsoon, money bill, writs…" aria-label="Search PYQs">
+      <label class="sr-only" for="f-year">From year</label>
+      <select id="f-year"><option value="0">All years</option><option value="2020">2020+</option><option value="2022">2022+</option><option value="2024">2024+</option></select>
+      <label class="sr-only" for="f-sub">Subject</label>
+      <select id="f-sub"><option value="">All subjects</option><option>Polity</option><option>Economy</option><option>Geography</option><option>History</option><option>Environment</option></select>
+      <button class="btn btn-primary" id="pyq-search" type="button">Search</button>
+    </div>
+    <p class="muted small" id="pyq-count" role="status"></p>
+  </section>
+
+  <div class="pyq-grid">
+    <!-- RESULTS -->
+    <section aria-label="PYQ results">
+      <div id="pyq-list" class="pyq-list"></div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn btn-dark" id="attempt-set" type="button" disabled>Attempt selected as test (0)</button>
+        <span class="muted small">Tick questions, then launch them in the Test Interface (#39).</span>
+      </div>
+    </section>
+
+    <!-- INTELLIGENCE #40 -->
+    <aside class="card intel" aria-labelledby="in-h">
+      <h2 id="in-h">Pattern Intelligence <span class="fid">#40</span></h2>
+      <p class="muted small">Frequency of PYQs by subject (demo bank):</p>
+      <div class="freq" id="freq-bars"></div>
+      <div class="insight-box"><strong>AI insights</strong>
+        <ul>
+          <li>Polity repeats <em>rights & writs</em> every 2 years.</li>
+          <li>Monsoon/ENSO asked 4× since 2019 — trend rising.</li>
+          <li>Economy now favours <em>statement-format</em> over definition MCQs.</li>
+          <li>Your accuracy on PYQ frames: 58% — below your mock accuracy (67%). Fix: practice real frames, not only generated ones.</li>
+        </ul>
+      </div>
+      <a class="btn btn-primary btn-block" href="test-interface.html?mode=pyq">Start PYQ practice session →</a>
+    </aside>
+  </div>
+</main>
+<footer class="foot"><nav><a href="dashboard.html">Dashboard</a><a href="mock-tests.html">Test Center</a><a href="search.html">Universal Search</a><a href="shared-system.html">Shared System</a></nav><p>© 2026 UPSC ZONE AI · PYQ bank is illustrative demo content.</p></footer>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<script src="pyq.js"></script>
+</body>
+</html>
